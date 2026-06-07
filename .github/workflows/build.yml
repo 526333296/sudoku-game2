@@ -26,6 +26,9 @@ jobs:
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
     
+    - name: Accept Android SDK Licenses
+      run: yes | sdkmanager --licenses --sdk_root=$ANDROID_HOME
+    
     - name: Install Gradle
       run: |
         wget -q https://services.gradle.org/distributions/gradle-8.5-bin.zip -O /tmp/gradle.zip
